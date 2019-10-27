@@ -13,7 +13,7 @@ import ANReactiveTableKit
 final class TableViewController: UITableViewController {
 
     var tableViewDriver: TableCoordinator?
-    var groups: [ToolGroup] = [] {
+    var groups: [TeaGroup] = [] {
         didSet {
             self.tableViewDriver?.tableViewModel = TableViewController.viewModel(forState: groups
             )
@@ -22,27 +22,27 @@ final class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Tools"
+        self.title = "Teas"
         self.tableViewDriver = TableCoordinator(tableView: self.tableView)
 
         self.groups = [
-            ToolGroup(
-                name: "OLD TOOLS",
-                tools: [Tool(type: .wrench), Tool(type: .hammer), Tool(type: .clamp), Tool(type: .nutBolt), Tool(type: .crane)]
-            ),
-            ToolGroup(
-                name: "NEW TOOLS",
-                tools: [Tool(type: .wrench), Tool(type: .hammer), Tool(type: .clamp), Tool(type: .nutBolt), Tool(type: .crane)]
-            ),
+            TeaGroup.chineseTeas,
+            TeaGroup.japaneseTeas
         ]
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-            self.addTool()
+            self.addTea()
         }
     }
 
-    func addTool() {
-        self.groups[0].tools.append(Tool.randomTool())
+    func addTea() {
+        let randomTea = Tea.randomTea()
+        switch randomTea.region {
+        case .chinese:
+            self.groups[0].teas.append(randomTea)
+        case .japanese:
+            self.groups[0].teas.append(randomTea)
+        }
     }
 }
 
@@ -52,31 +52,31 @@ extension TableViewController {
 
     /// Pure function mapping new state to a new `TableViewModel`.  This is invoked each time the state updates
     /// in order for ReactiveLists to update the UI.
-    static func viewModel(forState groups: [ToolGroup]) -> TableModel {
+    static func viewModel(forState groups: [TeaGroup]) -> TableModel {
         let sections: [TableSectionModel] = groups.map { group in
-            let cellViewModels = group.tools.map { ToolTableCellModel(tool: $0) }
+            let cellViewModels = group.teas.map { TeaTableCellModel(tea: $0) }
             return TableSectionModel(id: group.name, cellViewModels: cellViewModels, headerTitle: group.name)
         }
         return TableModel(sections: sections)
     }
 }
 
-final class ToolTableCell: UITableViewCell {}
+final class TeaTableCell: UITableViewCell {}
 
-struct ToolTableCellModel: TableCellViewModel {
+struct TeaTableCellModel: TableCellViewModel {
     var id: String {
-        return self.tool.uuid.uuidString
+        return self.tea.uuid.uuidString
     }
-    let tool: Tool
-    let registrationInfo = ViewRegistrationInfo(classType: ToolTableCell.self)
+    let tea: Tea
+    let registrationInfo = ViewRegistrationInfo(classType: TeaTableCell.self)
     let height = Float(44.0)
     
     var didSelect: DidSelectClosure? = {
-        print("Tool Tapped!")
+        print("Tea Tapped!")
     }
     
     func apply(to cell: UITableViewCell) {
-        guard let tableCell = cell as? ToolTableCell else { return }
-        tableCell.textLabel?.text = tool.type.name
+        guard let tableCell = cell as? TeaTableCell else { return }
+        tableCell.textLabel?.text = tea.name
     }
 }

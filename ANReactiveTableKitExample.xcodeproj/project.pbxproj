@@ -12,8 +12,8 @@
 		8F6267D42365F6C10018345B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6267D32365F6C10018345B /* Assets.xcassets */; };
 		8F6267D72365F6C10018345B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F6267D52365F6C10018345B /* LaunchScreen.storyboard */; };
 		8F6267E02365F7690018345B /* ANReactiveTableKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F6267DF2365F7690018345B /* ANReactiveTableKit */; };
-		8F8EC0392365FA6E0041E2BE /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8EC0382365FA6E0041E2BE /* Tool.swift */; };
 		8F8EC03B2365FC5B0041E2BE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8EC03A2365FC5B0041E2BE /* TableViewController.swift */; };
+		8F8EC03D236614050041E2BE /* Tea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8EC03C236614050041E2BE /* Tea.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +23,8 @@
 		8F6267D32365F6C10018345B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F6267D62365F6C10018345B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F6267D82365F6C10018345B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F8EC0382365FA6E0041E2BE /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		8F8EC03A2365FC5B0041E2BE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		8F8EC03C236614050041E2BE /* Tea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tea.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +63,8 @@
 				8F6267D32365F6C10018345B /* Assets.xcassets */,
 				8F6267D52365F6C10018345B /* LaunchScreen.storyboard */,
 				8F6267D82365F6C10018345B /* Info.plist */,
-				8F8EC0382365FA6E0041E2BE /* Tool.swift */,
 				8F8EC03A2365FC5B0041E2BE /* TableViewController.swift */,
+				8F8EC03C236614050041E2BE /* Tea.swift */,
 			);
 			path = ANReactiveTableKitExample;
 			sourceTree = "<group>";
@@ -147,7 +147,7 @@
 			files = (
 				8F6267CB2365F6BE0018345B /* AppDelegate.swift in Sources */,
 				8F6267CD2365F6BE0018345B /* SceneDelegate.swift in Sources */,
-				8F8EC0392365FA6E0041E2BE /* Tool.swift in Sources */,
+				8F8EC03D236614050041E2BE /* Tea.swift in Sources */,
 				8F8EC03B2365FC5B0041E2BE /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
