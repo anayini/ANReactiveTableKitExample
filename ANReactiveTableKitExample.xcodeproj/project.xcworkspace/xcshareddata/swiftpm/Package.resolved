@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ANReactiveTableKit",
+        "repositoryURL": "/Users/arjunnayini/code/oss/ANReactiveTableKit",
+        "state": {
+          "branch": "dev",
+          "revision": "85fa8e05f5cc197e44c51da7e8717e6e844b65e5",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
