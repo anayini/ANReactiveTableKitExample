@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F06A25223661B8D0006D6CA /* ANReactiveTableKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F06A25123661B8D0006D6CA /* ANReactiveTableKit */; };
 		8F6267CB2365F6BE0018345B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6267CA2365F6BE0018345B /* AppDelegate.swift */; };
 		8F6267CD2365F6BE0018345B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6267CC2365F6BE0018345B /* SceneDelegate.swift */; };
 		8F6267D42365F6C10018345B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6267D32365F6C10018345B /* Assets.xcassets */; };
 		8F6267D72365F6C10018345B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F6267D52365F6C10018345B /* LaunchScreen.storyboard */; };
-		8F6267E02365F7690018345B /* ANReactiveTableKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F6267DF2365F7690018345B /* ANReactiveTableKit */; };
 		8F8EC03B2365FC5B0041E2BE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8EC03A2365FC5B0041E2BE /* TableViewController.swift */; };
 		8F8EC03D236614050041E2BE /* Tea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8EC03C236614050041E2BE /* Tea.swift */; };
 /* End PBXBuildFile section */
@@ -32,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F6267E02365F7690018345B /* ANReactiveTableKit in Frameworks */,
+				8F06A25223661B8D0006D6CA /* ANReactiveTableKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +44,7 @@
 			children = (
 				8F6267C92365F6BE0018345B /* ANReactiveTableKitExample */,
 				8F6267C82365F6BE0018345B /* Products */,
+				8F8EC03E23661AD70041E2BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +70,13 @@
 			path = ANReactiveTableKitExample;
 			sourceTree = "<group>";
 		};
+		8F8EC03E23661AD70041E2BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,7 +94,7 @@
 			);
 			name = ANReactiveTableKitExample;
 			packageProductDependencies = (
-				8F6267DF2365F7690018345B /* ANReactiveTableKit */,
+				8F06A25123661B8D0006D6CA /* ANReactiveTableKit */,
 			);
 			productName = ANReactiveTableKitExample;
 			productReference = 8F6267C72365F6BE0018345B /* ANReactiveTableKitExample.app */;
@@ -117,7 +125,7 @@
 			);
 			mainGroup = 8F6267BE2365F6BE0018345B;
 			packageReferences = (
-				8F6267DE2365F7690018345B /* XCRemoteSwiftPackageReference "ANReactiveTableKit" */,
+				8F06A25023661B8D0006D6CA /* XCRemoteSwiftPackageReference "ANReactiveTableKit" */,
 			);
 			productRefGroup = 8F6267C82365F6BE0018345B /* Products */;
 			projectDirPath = "";
@@ -340,9 +348,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8F6267DE2365F7690018345B /* XCRemoteSwiftPackageReference "ANReactiveTableKit" */ = {
+		8F06A25023661B8D0006D6CA /* XCRemoteSwiftPackageReference "ANReactiveTableKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/arjunnayini/code/oss/ANReactiveTableKit";
+			repositoryURL = "https://github.com/anayini/ANReactiveTableKit.git";
 			requirement = {
 				branch = dev;
 				kind = branch;
@@ -351,9 +359,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8F6267DF2365F7690018345B /* ANReactiveTableKit */ = {
+		8F06A25123661B8D0006D6CA /* ANReactiveTableKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8F6267DE2365F7690018345B /* XCRemoteSwiftPackageReference "ANReactiveTableKit" */;
+			package = 8F06A25023661B8D0006D6CA /* XCRemoteSwiftPackageReference "ANReactiveTableKit" */;
 			productName = ANReactiveTableKit;
 		};
 /* End XCSwiftPackageProductDependency section */

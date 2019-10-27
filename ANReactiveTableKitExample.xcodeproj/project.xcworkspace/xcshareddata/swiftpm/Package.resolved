@@ -3,7 +3,7 @@
     "pins": [
       {
         "package": "ANReactiveTableKit",
-        "repositoryURL": "/Users/arjunnayini/code/oss/ANReactiveTableKit",
+        "repositoryURL": "https://github.com/anayini/ANReactiveTableKit.git",
         "state": {
           "branch": "dev",
           "revision": "246f894eff8889eb2a146285a26d4d2689a644e5",
