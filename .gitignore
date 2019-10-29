@@ -2,3 +2,7 @@
 build/
 DerivedData/
 xcuserdata/
+Package.pins
+Package.resolved
+*.xcodeproj
+.swiftpm

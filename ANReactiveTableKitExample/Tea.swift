@@ -6,8 +6,13 @@
 //  Copyright © 2019 Arjun Nayini. All rights reserved.
 //
 
+import ANReactiveTableKit
 import Foundation
 import UIKit
+
+struct TeaState {
+    var teaGroups: [TeaGroup]
+}
 
 struct TeaGroup {
     let name: String
@@ -15,6 +20,16 @@ struct TeaGroup {
     
     static let chineseTeas = TeaGroup(name: "Chinese Teas", teas: TeaRegion.chinese.styles.map { Tea(region: .chinese, style: $0)})
     static let japaneseTeas = TeaGroup(name: "Japanese Teas", teas: TeaRegion.japanese.styles.map { Tea(region: .japanese, style: $0)})
+}
+
+extension TeaState: TableModelConvertible {
+    func tableModel() -> TableModel {
+        let sectionModels = teaGroups.map { group in
+            TableSectionModel(id: group.name, cellViewModels: group.teas.map { tea in TeaTableCellModel(tea: tea) }, headerTitle: group.name)
+        }
+        return TableModel(sections: sectionModels)
+    }
+    
 }
 
 struct Tea {

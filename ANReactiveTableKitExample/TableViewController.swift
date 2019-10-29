@@ -6,42 +6,38 @@
 //  Copyright © 2019 Arjun Nayini. All rights reserved.
 //
 
+import Combine
 import Foundation
 import UIKit
 import ANReactiveTableKit
 
+
 final class TableViewController: UITableViewController {
 
-    var tableViewDriver: TableCoordinator?
-    var groups: [TeaGroup] = [] {
-        didSet {
-            self.tableViewDriver?.tableViewModel = TableViewController.viewModel(forState: groups
-            )
-        }
-    }
+    var tableViewDriver: TableCoordinator<TeaState>?
+    var state = CurrentValueSubject<TeaState, Never>(TeaState(teaGroups: []))
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Teas"
-        self.tableViewDriver = TableCoordinator(tableView: self.tableView)
-
-        self.groups = [
-            TeaGroup.chineseTeas,
-            TeaGroup.japaneseTeas
-        ]
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-            self.addTea()
-        }
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTea))
+        self.tableViewDriver = TableCoordinator(subject: self.state, tableView: self.tableView)
+        self.state.send(
+            TeaState(
+                teaGroups: [
+                    TeaGroup.chineseTeas,
+                    TeaGroup.japaneseTeas
+            ])
+        )
     }
 
-    func addTea() {
+    @objc func addTea() {
         let randomTea = Tea.randomTea()
         switch randomTea.region {
         case .chinese:
-            self.groups[0].teas.append(randomTea)
+            self.state.value.teaGroups[0].teas.append(randomTea)
         case .japanese:
-            self.groups[0].teas.append(randomTea)
+            self.state.value.teaGroups[1].teas.append(randomTea)
         }
     }
 }
